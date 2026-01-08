@@ -1,10 +1,12 @@
 import React from "react";
+import { Link } from "react-router-dom";
+
 
 function NavBar() {
   const itensMenu = [
-    { key: "mapa", nomeFull: "Mapa", nomeSm: "Mapa", icone: "fa-regular fa-map", link: "#" },
+    { key: "MapView", nomeFull: "Mapa", nomeSm: "Mapa", icone: "fa-regular fa-map", link: "#" },
     {
-      key: "linhas",
+      key: "Teste",
       nomeFull: "Linhas e Horários",
       nomeSm: "Horários", // rótulo reduzido para telas pequenas
       icone: "fa-regular fa-clock",
@@ -27,7 +29,7 @@ function NavBar() {
     >
       <ul className="flex flex-row items-center justify-around w-full md:flex-col md:items-center md:justify-start">
         {itensMenu.map((item) => (
-          <li key={item.key} className="text-center md:mb-6">
+          <Link to={item.key} key={item.key} className="text-center md:mb-6">
             <a
               href={item.link}
               className="flex flex-col items-center text-white hover:text-gray-200 px-2"
@@ -40,7 +42,7 @@ function NavBar() {
               <span className="text-xs mt-1 block md:hidden">{item.nomeSm}</span>
               <span className="hidden md:block text-sm mt-2">{item.nomeFull}</span>
             </a>
-          </li>
+          </Link>
         ))}
       </ul>
     </nav>

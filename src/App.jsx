@@ -1,5 +1,8 @@
-import MapView from "./components/MapView";
+import MapView from "./routes/MapView";
 import NavBar from "./components/NavBar";
+
+// reaproveitando de estruturar 
+import { Outlet } from "react-router-dom";
 
 function App() {
   return (
@@ -10,7 +13,7 @@ function App() {
 
       {/* main deve respeitar a barra bottom em mobile e a sidebar em md+ */}
       <main className="min-h-screen md:pl-24 pb-16 md:pb-0">
-        <MapView />
+        <Outlet />
       </main>
     </div>
   );
